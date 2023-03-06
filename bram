@@ -1,0 +1,14 @@
+from datetime import date
+
+# Получаем от пользователя дату рождения в формате "YYYY-MM-DD"
+birthdate = input("Введите дату рождения (YYYY-MM-DD): ")
+
+# Преобразуем строку с датой рождения в объект даты
+birthdate = date.fromisoformat(birthdate)
+
+# Вычисляем возраст
+today = date.today()
+age = today.year - birthdate.year - ((today.month, today.day) < (birthdate.month, birthdate.day))
+
+# Выводим возраст
+print(f"Ваш возраст: {age} лет")
